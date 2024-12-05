@@ -1,0 +1,21 @@
+
+Model
+ Cuida da logica da informação (salva, apaga, reescreve, atualiza banco de dados)
+    SELECT * FROM CATS
+
+View
+    Cuida da representação da informação, renderizando dinamicamente o html baseado na informação recebida.
+    View só cuida de como representar, não do que fazer com a representação
+
+Controller
+    Controller recebe request, pega informação de Model ( aquui tem pouco codigo )
+    controller não valida a informação, só reage a informação recebida, validar informação é trabalho do model.
+    
+    MODEL E VIEW NÃO INTERAGEM ENTRE SÍ.
+
+    if (sucess) {
+        View.cats
+    } else {
+        View.error
+    }
+    return 0;
