@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="preview.css">
     <title>Document</title>
+    <script src="app.js" defer></script>
   </head>
   <body>
     <header>
       <div class="header-left">
         <div class="header-left-top">
-          <img src="assets/logo.png" alt="LifePulse Labs logo">
+          <img src="assets/logo.png" class="lpl-logo" alt="LifePulse Labs logo">
         </div>
         <div class="header-left-bot">
           <p>Your Life, Our Pulse</p>
@@ -20,103 +21,166 @@
         <div class="header-right-top">
           <img src="assets/cart.png" class="header-cart" alt="shopping cart">
         </div>
-        <div class="header-right-bottom">>
-          <ul class="header-menu">
-            <li>Patrocinadores</li>
-            <li>Placeholder</li>
-            <li>Ajuda</li>
-          </ul>
+        <div class="header-right-bottom">
+          <div class="dropdown" data-dropdown>
+            <button class="link" data-dropdown-button>Chrome</button>
+            <div class="dropdown-menu information-grid">
+              <nav class="dropdown-heading">
+                <nav class="dropdown-links">Operating Systems</nav>
+                <a href="#" class="droplink">Biotech</a>
+                <a href="#" class="droplink">Rippler</a>
+                <a href="#" class="droplink">Netdriver</a>      
+              </nav>
+              <nav class="dropdown-heading">
+                <nav class="dropdown-links">Optics</nav>
+                <a href="#" class="droplink">Oracle</a>
+                <a href="#" class="droplink">Sentry</a>
+                <a href="#" class="droplink">Doomsayer</a>
+              </nav>
+              <nav class="dropdown-heading">
+                <nav class="dropdown-links">Arms</nav>
+                <a href="#" class="droplink">MaxTac</a>
+                <a href="#" class="droplink">Monowire</a>
+                <a href="#" class="droplink">Gorilla</a>
+              </nav>
+              <nav class="dropdown-heading">
+                <nav class="dropdown-links">Legs</nav>
+                <a href="#" class="droplink">Lynx</a>
+                <a href="#" class="droplink">Cyber</a>
+                <a href="#" class="droplink">Bionic</a>
+              </nav>
+              <nav class="dropdown-heading">
+                <nav class="dropdown-links">Bio Systems</nav>
+                <a href="#" class="droplink">BioMonitor</a>
+                <a href="#" class="droplink">Nano-Plating</a>
+                <a href="#" class="droplink">Adreno-Trigger</a>
+              </nav>
+            </div>
+            <a href="#" class="link">Dictionary</a>
+            <div class="dropdown second-dropdown" data-dropdown>
+              <button class="link" data-dropdown-button>Trace Ripper</button>
+              <div class="dropdown-menu">
+                <form class="trace-form">
+                  <label for="email">DataPacket(email)</label>
+                  <input type="email" name="email" id="email">
+                  <label for="password">Ripperdoc(any name)</label>
+                  <input type="password" name="password" id="password">
+                  <button type="submit">Ping Doc</button>
+                </form>
+              </div>
+
+            </div>
+          </div>
         </div>
-    </header>
+      </div>
+    </header>    
     <main>
       <div id="main-div">
-        <div class="scroll-container">
-          <div class="item">
-            <img src="assets/Nokota.png" class="logo" alt="Nokota logo">
-            <img src="assets/BionicJoints.png" alt="Item 1">
-            <p>
-              Bionic Joints
-            </p>
-            <div class="price">$399.99</div>
-            <p>
-              Bionic Joints: Reinforce your body for maximum productivity—built to never tire, wear, or fail, because in the corporate world, efficiency is everything.
-            </p>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="item">
-            <img src="assets/Militech.png" class="logo" alt="Militech logo">
-            <img src="assets/BiotechSigma.png" alt="Item 2">
-            <p>
-              Biotech Σ Mk.1-4
-            </p>
-            <div class="price">$799.99</div>
-            <p>
-              Biotech Σ Mk.1-4: Optimize your future with a neuro-chip that monitors, controls, and enhances your biological functions, ensuring you're always at peak performance—because health is the ultimate commodity.
-            </p>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="item">
-            <img src="assets/Delamain.png" class="logo" alt="Delamain logo">
-            <img src="assets/DetectorRush.png" alt="Item 3">
-            <p>
-              Adreno-Trigger
-            </p>
-            <div class="price">$299.99</div>
-            <p>
-              Adreno-Trigger maximizes performance for profit, boosting your adrenaline to machine-like levels at the low-low cost of your humanity!
-            </p>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="item">
-            <img src="assets/Arasaka.png" class="logo" alt="Arasaka logo">
-            <img src="assets/KiroshiOpticsCombined.png" alt="Item 4">
-            <p>
-              Arasaka "Oracle" Optics
-            </p>
-            <div class="price">$999.99</div>
-            <p>
-              Arasaka "Oracle" Optics offer AI-enhanced vision and real-time data analysis for superior elimination. 256K Vision!!!
-            </p>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="item">
-            <img src="assets/Tsunami.png" class="logo" alt="Tsunami logo">
-            <img src="assets/StrongArms.png" alt="Item 5">
-            <p>
-              Bionic Gorilla Arms
-            </p>
-            <div class="price">$699.99</div>
-            <p>
-              Gorilla Arms are lightweight, efficient and hard-hitting arm replacement cyberware. 
-            </p>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-        </div>
-        <div class="product-menu">
-          <div class="product">
-            <img src="" alt="">
-          </div><div class="product">
-            <img src="" alt="">
-          </div><div class="product">
-            <img src="" alt="">
-          </div><div class="product">
-            <img src="" alt="">
-          </div><div class="product">
-            <img src="" alt="">
-          </div>
+        <!-- Carousel -->
+        <div class="carousel" data-carousel>
+          <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+          <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+          <ul data-slides>
+            <!-- First item container -->
+            <li class="slide" data-active>
+              <div class="item-company">
+                <img src="assets/Nokota.png" class="company-logo" alt="Nokota logo">
+              </div>
+              <div class="item">
+                <img src="assets/BionicJoints.png" alt="Item 1">
+              </div>
+              <div class="item-info">
+                <p>Bionic Joints</p>
+                <div class="price">$499.99</div>
+                <p>
+                  Reinforce your body for maximum productivity—built to never tire, wear, or fail, because in the corporate world, efficiency is everything!
+                </p>
+              </div>
+              <div class="buy-btn">
+                <button class="buy-now">Buy Now</button>
+              </div>
+            </li>
+            <!-- Second item container -->
+            <li class="slide">
+              <div class="item-company">
+                <img src="assets/Militech.png" class="company-logo" alt="Militech logo">
+              </div>
+              <div class="item">
+                <img src="assets/BiotechSigma.png" alt="Item 2">
+              </div>
+              <div class="item-info"> 
+                <p>Biotech Σ Mk.1-4</p>
+                <div class="price">$799.99</div>
+                <p>
+                  Optimize your future with a neuro-chip free of Ads, that monitors, controls, and enhances your biological functions, ensuring you're always at peak performance—because health is the ultimate commodity!
+                </p>
+              </div>
+              <div class="buy-btn">
+                <button class="buy-now">Buy Now</button>
+              </div>
+            </li>
+            <!-- Third item container -->
+            <li class="slide">
+              <div class="item-company">
+                <img src="assets/Delamain.png" class="company-logo" alt="Delamain logo">
+              </div>
+              <div class="item">
+                <img src="assets/DetectorRush.png" alt="Item 3">
+              </div>
+              <div class="item-info">
+                <p>Adreno-Trigger</p>
+                <div class="price">$299.99</div>
+                <p>
+                  Adreno-Trigger maximizes performance for profit, boosting your adrenaline to machine-like levels at the low-low cost of your humanity!
+                </p>
+              </div>
+              <div class="buy-btn">
+                <button class="buy-now">Buy Now</button>
+              </div>
+            </li>
+            <!-- Fourth item container -->
+            <li class="slide">
+              <div class="item-company">
+                <img src="assets/Arasaka.png" class="company-logo" alt="Arasaka logo">
+              </div>
+              <div class="item">
+                <img src="assets/KiroshiOpticsCombined.png" alt="Item 4">
+              </div>
+              <div class="item-info">
+                <p>Arasaka "Oracle" Optics</p>
+                <div class="price">$999.99</div>
+                <p>
+                  Arasaka offers AI-enhanced vision and real-time data analysis for superior everyday enjoyment. 256K Vision!!!
+                </p>
+              </div>
+              <div class="buy-btn">
+                <button class="buy-now">Buy Now</button>
+              </div>
+            </li>
+            <!-- Fifth item container -->
+            <li class="slide">
+              <div class="item-company">
+                <img src="assets/Tsunami.png" class="company-logo" alt="Tsunami logo">
+              </div>
+              <div class="item">
+                <img src="assets/StrongArms.png" alt="Item 5">
+              </div>
+              <div class="item-info">
+                <p>Bionic Gorilla Arms</p>
+                <div class="price">$699.99</div>
+                <p>
+                  Gorilla Arms are lightweight, efficient and hard-hitting arm replacement cyberware for your everyday job!
+                </p>
+              </div>
+              <div class="buy-btn">
+                <button class="buy-now">Buy Now</button>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </main>
-    <footer>
-      <div class="">
-      </div>
-      <div class="">
-      </div>
-      <div class="">
-      </div>
-      <div class="">
-      </div>  
+    <footer>  
     </footer>
-    <script src="app.js"></script>
   </body>
 </html>

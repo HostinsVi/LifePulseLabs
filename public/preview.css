@@ -1,13 +1,14 @@
-* {
+*, *::before, *::after {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
   height: 100%;
 }
-
+/* header stuff */
 header {
   display: flex;
   flex-direction:row;
@@ -28,14 +29,18 @@ header {
   height: 80%;
   padding: 1em;
 }
+.lpl-logo {
+  width: 50vw;
+}
+
 .header-left-bot {
   display: flex;
   justify-content:flex-end;
   width: 100%;
   height: 20%;
   font-size: larger;
+  color: white;
 }
-
 
 .header-right {
   display: flex;
@@ -46,45 +51,118 @@ header {
 
 .header-right-top {
   display: flex;
-  justify-content: right;  /* Centers the image horizontally */
+  justify-content: right; 
   width: 90%;
-  height: 70%;              /* Adjust as needed */
+  height: 70%;             
 }
-
+.header-cart {
+  cursor: pointer;
+}
 
 .header-right-bottom {
   display: flex;
-  justify-content: right;
-  width: 90%;
-  height: 20%;
-}
-.header-menu {
-  align-items: center;
-  background: rgba(0,0,0,.6);
-  border: 1px solid #ffffff;
-  display: flex;
-  width: 40%;
-  height: 100%;
-  margin: 0;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
-  color: white;
-}
-li {
-  display: flex;
-  width: 33.3%;
-  height: 100%;
   justify-content: center;
   align-items: center;
-  background-color: black;
-}
-li:hover {
-  background-color: rgb(143, 143, 143);
+  width: 100%;
+  height: 30%;
 }
 
+.dropdown {
+  display: flex;
+  position: relative;
+  width: 70%;
+  border: 1px solid white;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown > .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: inherit;
+  border: none;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.dropdown > .link:hover {
+  background-color: rgb(143, 143, 143);
+  cursor: pointer;
+}
+
+.dropdown > .link:active {
+  background-color: #ffffff;
+  color: black;
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 100%;
+  margin-top: 0.1rem;
+  padding: 0.5rem;
+  border-radius: .25em;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+  background-color: white;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.dropdown.active > .link + .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: auto;
+}
+
+.dropdown > .link:focus, .link:hover {
+  background-color: rgb(143, 143, 143);
+  cursor: pointer;
+}
+
+.information-grid {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 2rem;
+}
+
+.dropdown-links {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.droplink {
+  display:flex;
+  padding: .15rem;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+.second-dropdown {
+  border: 0;
+  width: 100%;
+}
+.trace-form > input {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.trace-form > button {
+  /*terminar isso*/
+}
+
+
+/* end of header */
+/* start of main  */
 main {
   display: flex;
   width: 100%;
@@ -92,73 +170,149 @@ main {
   background: linear-gradient(to bottom right, rgb(255, 255, 255) 0%, rgb(45, 46, 45) 20%, rgb(0, 0, 0) 30%); 
 }
 
-#main-div {  
-  display: flex;  
-  width: 100%;
-}
-
-footer {
+#main-div {
   display: flex;
   width: 100%;
-  height: 10%;
-}
-
-
-/* gpt stuff */
-.scroll-container {
-  display: flex;
   justify-content: center;
-  width: 100%;
-  margin-top: 1em;
+  align-items: center;
 }
-.logo {
-  display: flex;
-  justify-self: center;
-  width: 80%;
-  padding: 1em;
+/* carousel stuff */
+.carousel {  
+  position: relative;
+  width: 50%;
+  height: 80%;
+  cursor: default;
+  margin: 1em;
 }
 
-/* Individual item style */
-.item {
-  width: 15%;
-  text-align: center;
-  height: 75%;
-  flex-shrink: 1;
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
   border: 1px solid #ffffff;
   border-radius: 1em;
-  margin-left: 1em;
-  margin-right: 1em;
   background-image: linear-gradient(to top, rgb(136, 3, 3), rgb(13, 14, 13), rgb(0, 0, 0));
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
 }
 
-.itemimg {
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255, .5);
+  cursor: pointer;
+  border-radius: .25rem;
+  padding: 0 .5rem;
+  background-color: rga(0,0,0, .1);
+} 
+.carousel-button:hover,
+.carousel-button:focus {
+  color: white;
+  background-color: rga(0,0,0, .2);
+}
+
+
+.carousel-button:focus {
+  outline: 1px solid black;
+}
+
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
+.carousel > ul {
+  list-style: none;
+}
+/* end of  carousel stuff */
+
+/* Item style */
+
+.item-company {
+  display: flex;
   width: 100%;
-  height: auto;
-  border-radius: 5px;
+  height: 25%;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-logo {
+  width: 50%;
+  height: 50%;
+}
+
+.item {
+  display: flex;
+  width: 100%;
+  height: 20%;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5em;
+  width: 100%;
+  height: 35%;
+  justify-content: center;
+  align-items: center;
 }
 
 .price {
-  margin-top: 10px;
+  padding: 1em;
   font-size: 18px;
-  color: #ffffff;
+  color: lightgreen;
   font-weight: bold;
 }
 
 .buy-btn {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  align-items: center;
+  justify-content: center;
+}
+
+.buy-now {
   background-image: radial-gradient(circle, rgb(0, 252, 0), rgb(0, 150, 0), rgb(0, 0, 0));
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #28a745;
+  padding: 1em;
+  background-color: #28a745; 
   color: rgb(0, 0, 0);
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-.buy-btn:hover {
-  background-color: #ee2222;
+.buy-now:hover {
+  background-image: radial-gradient(circle, rgb(42, 236, 74), rgb(161, 161, 161)); 
 }
-
-/*end gpt stuff*/
+.buy-now:active {
+  background-image: radial-gradient(circle, rgb(17, 17, 17), rgb(32, 255, 69));
+  color: white;
+}
+/* end of item style */
+/* end of main */
+footer {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  background-color: grey;
+}
