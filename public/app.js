@@ -37,7 +37,9 @@ class SpecialHeader extends HTMLElement {
     <header>
       <div class="header-left">
         <div class="header-left-top">
-          <img src="assets/logo.png" class="lpl-logo" alt="LifePulse Labs logo">
+          <a href="index.html" class="header-index">
+              <img src="assets/logo.png" class="lpl-logo" alt="LifePulse Labs logo">
+          </a>
         </div>
         <div class="header-left-bot">
           <p>Your Life, Our Pulse</p>
@@ -45,11 +47,13 @@ class SpecialHeader extends HTMLElement {
       </div>
       <div class="header-right">
         <div class="header-right-top">
-          <img src="assets/cart.png" class="header-cart" alt="shopping cart">
+          <a href="cart.html">
+            <img src="assets/cart.png" class="header-cart" alt="shopping cart">
+          </a>
         </div>
         <div class="header-right-bottom">
           <div class="dropdown" data-dropdown>
-            <button class="link" data-dropdown-button>Chrome</button>
+            <button class="link" data-dropdown-button>Cyberware</button>
             <div class="dropdown-menu information-grid">
               <nav class="dropdown-heading">
                 <nav class="dropdown-links">Operating Systems</nav>

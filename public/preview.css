@@ -24,13 +24,15 @@ header {
   height: 100%;
 }
 .header-left-top {
-  display: flex; 
-  width: 60%;
+  display: flex;
+  justify-content: left; 
+  width: 50%;
   height: 80%;
   padding: 1em;
 }
 .lpl-logo {
-  width: 50vw;
+  height: 100%;
+  width: 45vw;
 }
 
 .header-left-bot {
@@ -51,11 +53,14 @@ header {
 
 .header-right-top {
   display: flex;
-  justify-content: right; 
+  justify-content: right;
   width: 90%;
   height: 70%;             
 }
 .header-cart {
+  display: flex;
+  width: 50%;
+  height: 100%;
   cursor: pointer;
 }
 
@@ -159,7 +164,6 @@ header {
 .trace-form > button {
   /*terminar isso*/
 }
-
 
 /* end of header */
 /* start of main  */
@@ -331,9 +335,7 @@ footer {
 /* Main div layout */
 .test-page #test-main-div {
   display: flex;
-  width: 100%;
-  height: 40%;
-  gap: 2rem;
+  width: 90%;
   margin: 1rem; /* Adds space below this div */
 }
 
@@ -348,16 +350,14 @@ footer {
 .test-page .item-image {
   width: 80%;
   max-width: 400px;
-  object-fit: cover;
   background-color: white;
 }
 
 /* Right side for item details */
 .test-page .item-details-box {
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   border: 1px solid #ffffff;
   border-radius: 1em;
   background-image: linear-gradient(to top, rgb(136, 3, 3), rgb(13, 14, 13), rgb(0, 0, 0));
@@ -444,8 +444,9 @@ footer {
   border-radius: 1em;
   background-image: linear-gradient(to top, rgb(136, 3, 3), rgb(13, 14, 13), rgb(0, 0, 0));
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 40%;
+  height: 50%;
   width: 50%;
+
 }
 
 .test-page .product {
@@ -468,18 +469,20 @@ footer {
 .test-page .plus-sign {
   font-size: 3rem;
   color: white;
+  align-self: center;
 }
 
 .test-page .price-sum {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 /* Price summary section */
 .test-page .price-sum-box {
   display: flex;
   flex-direction: column;
-  text-align: center;
 }
 
 .test-page .total-price {
@@ -501,4 +504,205 @@ footer {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
+}
+/* Scoped to cart.html with a black background */
+
+/* General page styles */
+.cart-page * {
+  box-sizing: border-box;
+  font-family: Raleway;
+  color: #ccc; /* Lighter text for contrast on black background */
+}
+
+.cart-page html, .cart-page body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: #000; /* Black background */
+}
+
+.cart-page .content-section {
+  margin: 1em;
+}
+
+.cart-page .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
+
+/* Cart Page Header Styles (Just the section headers for cart, no global header styles) */
+.cart-page .section-header {
+  font-family: "Metal Mania";
+  font-weight: normal;
+  color: #ccc; /* Lighter text for contrast on black background */
+  text-align: center;
+  font-size: 2.5em;
+}
+
+/* Cart Page Styles */
+.cart-page .cart-header {
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #ccc; /* Lighter text for contrast on black background */
+}
+
+.cart-page .cart-column {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #555; /* Darker border for contrast */
+  margin-right: 1.5em;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.cart-page .cart-row {
+  display: flex;
+}
+
+.cart-page .cart-item {
+  width: 45%;
+}
+
+.cart-page .cart-price {
+  width: 20%;
+  font-size: 1.2em;
+  color: #ccc; /* Lighter text for contrast on black background */
+}
+
+.cart-page .cart-quantity {
+  width: 35%;
+}
+
+.cart-page .cart-item-title {
+  color: #ccc; /* Lighter text for contrast on black background */
+  margin-left: .5em;
+  font-size: 1.2em;
+}
+
+.cart-page .cart-item-image {
+  width: 75px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Buttons */
+.cart-page .btn-danger {
+  color: white;
+  background-color: #EB5757;
+  border: none;
+  border-radius: .3em;
+  font-weight: bold;
+}
+
+.cart-page .btn-danger:hover {
+  background-color: #CC4C4C;
+}
+
+.cart-page .cart-quantity-input {
+  height: 34px;
+  width: 50px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  background-color: #333; /* Dark background for inputs */
+  color: #ccc; /* Lighter text for contrast */
+  padding: 0;
+  text-align: center;
+  font-size: 1.2em;
+  margin-right: 25px;
+}
+
+.cart-page .cart-total {
+  text-align: end;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.cart-page .cart-total-title {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #ccc; /* Lighter text for contrast on black background */
+  margin-right: 20px;
+}
+
+.cart-page .cart-total-price {
+  color: #ccc; /* Lighter text for contrast on black background */
+  font-size: 1.1em;
+}
+
+.cart-page .btn-purchase {
+  display: block;
+  margin: 40px auto 80px auto;
+  font-size: 1.75em;
+  color: rgb(0, 0, 0);
+  background-color: #28a745; 
+  background-image: radial-gradient(circle, rgb(0, 252, 0), rgb(0, 150, 0), rgb(0, 0, 0));
+  padding: 1em 2em;
+  border-radius: .3em;
+}
+.cart-page .btn-purchase:hover {
+  background-image: radial-gradient(circle, rgb(42, 236, 74), rgb(161, 161, 161)); 
+}
+.cart-page .btn-purchase:active {
+  background-image: radial-gradient(circle, rgb(17, 17, 17), rgb(32, 255, 69));
+  color: white;
+}
+.cart-page .btn-purchase:hover {
+  background-color: #2D9CDB; /* Darker blue on hover */
+}
+
+/* Shop and Button Styles (Scoped to cart-page only) */
+.cart-page .shop-item {
+  margin: 30px;
+}
+
+.cart-page .shop-item-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #ccc; /* Lighter text for contrast on black background */
+  margin-bottom: 15px;
+}
+
+.cart-page .shop-item-image {
+  height: 250px;
+}
+
+.cart-page .shop-item-details {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.cart-page .shop-item-price {
+  flex-grow: 1;
+  color: #ccc; /* Lighter text for contrast on black background */
+}
+
+.cart-page .shop-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cart-page .shop-item-button {
+  background-image: radial-gradient(circle, rgb(0, 252, 0), rgb(0, 150, 0), rgb(0, 0, 0));
+  padding: 1em;
+  background-color: #28a745;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.cart-page .shop-item-button:hover {
+  background-image: radial-gradient(circle, rgb(42, 236, 74), rgb(161, 161, 161)); 
+}
+
+.cart-page .shop-item-button:active {
+  background-image: radial-gradient(circle, rgb(17, 17, 17), rgb(32, 255, 69));
+  color: white;
 }
