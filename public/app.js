@@ -47,7 +47,7 @@ class SpecialHeader extends HTMLElement {
       </div>
       <div class="header-right">
         <div class="header-right-top">
-          <a href="cart.html">
+          <a href="store.html">
             <img src="assets/cart.png" class="header-cart" alt="shopping cart">
           </a>
         </div>

@@ -1,0 +1,23 @@
+{
+    "Cyberware": [
+        {
+            "id": 1,
+            "name": "Bionic Joints",
+            "price": 49999,
+            "imgName": "BionicJoints.png"
+        },
+        {
+            "id": 2,
+            "name": "Biotech Σ Mk.1-4",
+            "price": 79999,
+            "imgName": "BiotechSigma.png"
+        }
+    ]
+}
+
+{
+    "files.associations": {
+      "*.ejs": "html"
+    }
+  }
+  
