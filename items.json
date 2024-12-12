@@ -15,9 +15,3 @@
     ]
 }
 
-{
-    "files.associations": {
-      "*.ejs": "html"
-    }
-  }
-  

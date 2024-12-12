@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="store.js" async></script>
+    <title>LifePulse Labs - Store</title>
+    <script src="https://checkout.stripe.com/checkout.js" defer></script>
+    <script>
+        var stripePublicKey = '<%= stripePublicKey %>'
+    </script>
+    <script src="store.js" defer></script>
     <link rel="stylesheet" href="preview.css" />
 </head>
 <body class="cart-page">
@@ -13,23 +17,16 @@
     <section class="container content-section">
     <h2 class="section-header">Cyberware</h2>
     <div class="shop-items">
-        <% %>
-        <div class="shop-item">
-            <span class="shop-item-title">Bionics Joints</span>
-            <img class="shop-item-image" src="assets/BionicJoints.png">
-            <div class="shop-item-details">
-                <span class="shop-item-price">$499.99</span>
-                <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+        <% items.Cyberware.forEach(function(item) { %>
+            <div class="shop-item" data-item-id="<%= item.id %>">
+                <span class="shop-item-title"><%= item.name %></span>
+                <img class="shop-item-image" src="assets/<%= item.imgName %>">
+                <div class="shop-item-details">
+                    <span class="shop-item-price">$<%= item.price / 100 %></span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
             </div>
-        </div>
-        <div class="shop-item">
-            <span class="shop-item-title">Biotech Σ Mk.1-4</span>
-            <img class="shop-item-image" src="assets/BiotechSigma.png">
-            <div class="shop-item-details">
-                <span class="shop-item-price">$799.99</span>
-                <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
-            </div>
-        </div>
+        <% }) %>
     </div>
 </section>
 <section class="container content-section">

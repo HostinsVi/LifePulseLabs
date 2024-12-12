@@ -47,7 +47,7 @@ class SpecialHeader extends HTMLElement {
       </div>
       <div class="header-right">
         <div class="header-right-top">
-          <a href="store.html">
+          <a href="store">
             <img src="assets/cart.png" class="header-cart" alt="shopping cart">
           </a>
         </div>
@@ -86,7 +86,7 @@ class SpecialHeader extends HTMLElement {
                 <a href="#" class="droplink">Adreno-Trigger</a>
               </nav>
             </div>
-            <a href="#" class="link">Dictionary</a>
+            <a href="https://github.com/HostinsVi/LifePulseLabs" class="link">About</a>
             <div class="dropdown second-dropdown" data-dropdown>
               <button class="link" data-dropdown-button>Trace Ripper</button>
               <div class="dropdown-menu">
